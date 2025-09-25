@@ -1,0 +1,611 @@
+
+**** 08/28/22 12:24:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\L2 T2(All) EEE,BUET Tanvir\L2 T2 - EEE 208 (Electronic Circuits II Laboratory)\Software\Project Work\Schematics\Final3.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sun Aug 28 12:20:12 2022
+
+
+
+** Analysis setup **
+.tran 1u 5m 0 1u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Final3.net"
+
+
+
+**** INCLUDING Final3.net ****
+* Schematics Netlist *
+
+
+
+R_R2         $N_0002 $N_0001  4.7k  
+C_C1         0 $N_0002  10u  
+R_R1         $N_0003 $N_0002  2.2k  
+V_V9         $N_0001 0 5
+R_R5         $N_0005 $N_0004  22k  
+R_R8         $N_0004 $N_0006  13k  
+C_C3         0 $N_0002  10u  
+X_U2         $N_0006 $N_0007 Pos Neg $N_0008 LM741
+X_U1         $N_0011 $N_0005 Pos Neg $N_0004 LM741
+V_V17         Pos 0 15
+V_V18         0 Neg 15
+C_C2         0 $N_0002  10u  
+X_U3         0 $N_0014 Pos Neg $N_0015 LM741
+R_R3         0 $N_0011  10k  
+R_R7         $N_0007 $N_0008  10k  
+C_C6         0 $N_0018  10u IC=0 
+C_C4         0 $N_0006  1p IC=0 
+C_C8         0 $N_0006  1p IC=0 
+R_R16         $N_0019 Noise_Plus_Music  1k  
+X_U4         0 $N_0019 Pos Neg Noise_Plus_Music uA741
+V_Noise1         $N_0022 0 DC 0 AC 0
++PULSE -0.1 0.1 0 0.025m 0.025m 0.001n 0.05m
+R_R13         $N_0022 $N_0019  1k  
+R_R4         $N_0018 $N_0005  100k  
+R_R6         $N_0004 $N_0007  10k  
+R_R20         Noise_Plus_Music $N_0014  9k  
+R_R10         $N_0008 $N_0014  11k  
+R_R21         $N_0023 $N_0019  1k  
+V_V21         $N_0023 0 DC 0 AC 0
++SIN 0 5 1000 0 0 0
+R_R11         $N_0014 $N_0015  9k  
+C_C7         $N_0003 $N_0011  0.01u IC=0 
+V_V23         $N_0003 0 DC 0 AC 0
++SIN 0 1 1000 0 0 0
+
+**** RESUMING Final3.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 08/28/22 12:24:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\L2 T2(All) EEE,BUET Tanvir\L2 T2 - EEE 208 (Electronic Circuits II Laboratory)\Software\Project Work\Schematics\Final3.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U4.dx         X_U4.dy         X_U2.x_lm741.dx X_U2.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               X_U1.x_lm741.dx X_U1.x_lm741.dy X_U3.x_lm741.dx X_U3.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+**** 08/28/22 12:24:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\L2 T2(All) EEE,BUET Tanvir\L2 T2 - EEE 208 (Electronic Circuits II Laboratory)\Software\Project Work\Schematics\Final3.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U4.qx         X_U2.x_lm741.qx X_U1.x_lm741.qx X_U3.x_lm741.qx 
+               NPN             NPN             NPN             NPN             
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75           93.75           93.75         
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+          CN    2.42            2.42            2.42            2.42         
+           D     .87             .87             .87             .87         
+
+
+**** 08/28/22 12:24:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\L2 T2(All) EEE,BUET Tanvir\L2 T2 - EEE 208 (Electronic Circuits II Laboratory)\Software\Project Work\Schematics\Final3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  Neg)  -15.0000  (  Pos)   15.0000  (X_U4.6)-15.09E-09 (X_U4.7) 144.1E-06     
+
+(X_U4.8) 144.1E-06 (X_U4.9)    0.0000 ($N_0001)    5.0000                       
+
+($N_0002)    1.5942                   ($N_0003)    0.0000                       
+
+($N_0004)     .0018                   ($N_0005) 19.24E-06                       
+
+($N_0006) 57.06E-12                   ($N_0007) 19.26E-06                       
+
+($N_0008)-942.1E-06                   ($N_0011)-159.4E-12                       
+
+($N_0014) 19.24E-06                   ($N_0015)     .0014                       
+
+($N_0018) 384.8E-15                   ($N_0019) 19.25E-06                       
+
+($N_0022)    0.0000                   ($N_0023)    0.0000                       
+
+(X_U4.10)    -.6077                   (X_U4.11)   14.9600                       
+
+(X_U4.12)   14.9600                   (X_U4.13)    -.5938                       
+
+(X_U4.14)    -.5938                   (X_U4.53)   14.0000                       
+
+(X_U4.54)  -14.0000                   (X_U4.90) 131.4E-06                       
+
+(X_U4.91)   40.0000                   (X_U4.92)  -40.0000                       
+
+(X_U4.99)    0.0000                   (X_U1.x_lm741.6)-173.5E-09                
+
+(X_U1.x_lm741.7)     .0018            (X_U1.x_lm741.8)     .0018                
+
+(X_U1.x_lm741.9)    0.0000            (X_U2.x_lm741.6) 91.18E-09                
+
+(X_U2.x_lm741.7)-951.3E-06            (X_U2.x_lm741.8)-951.3E-06                
+
+(X_U2.x_lm741.9)    0.0000            (X_U3.x_lm741.6)-134.9E-09                
+
+(X_U3.x_lm741.7)     .0014            (X_U3.x_lm741.8)     .0014                
+
+(X_U3.x_lm741.9)    0.0000            (X_U1.x_lm741.10)    -.6077               
+
+(X_U1.x_lm741.11)   14.9600           (X_U1.x_lm741.12)   14.9600               
+
+(X_U1.x_lm741.13)    -.5938           (X_U1.x_lm741.14)    -.5938               
+
+(X_U1.x_lm741.53)   14.0000           (X_U1.x_lm741.54)  -14.0000               
+
+(X_U1.x_lm741.90) 392.6E-06           (X_U1.x_lm741.91)   40.0000               
+
+(X_U1.x_lm741.92)  -40.0000           (X_U1.x_lm741.99)    0.0000               
+
+(X_U2.x_lm741.10)    -.6077           (X_U2.x_lm741.11)   14.9600               
+
+(X_U2.x_lm741.12)   14.9600           (X_U2.x_lm741.13)    -.5938               
+
+(X_U2.x_lm741.14)    -.5938           (X_U2.x_lm741.53)   14.0000               
+
+(X_U2.x_lm741.54)  -14.0000           (X_U2.x_lm741.90)-183.5E-06               
+
+(X_U2.x_lm741.91)   40.0000           (X_U2.x_lm741.92)  -40.0000               
+
+(X_U2.x_lm741.99)    0.0000           (X_U3.x_lm741.10)    -.6077               
+
+(X_U3.x_lm741.11)   14.9600           (X_U3.x_lm741.12)   14.9600               
+
+(X_U3.x_lm741.13)    -.5938           (X_U3.x_lm741.14)    -.5938               
+
+(X_U3.x_lm741.53)   14.0000           (X_U3.x_lm741.54)  -14.0000               
+
+(X_U3.x_lm741.90) 154.0E-06           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    0.0000               
+
+(Noise_Plus_Music) 137.5E-06          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V9        -7.246E-04
+    V_V17       -6.668E-03
+    V_V18       -6.669E-03
+    V_Noise1     1.925E-08
+    V_V21        1.925E-08
+    V_V23        7.246E-04
+    X_U4.vb     -1.509E-13
+    X_U4.vc      1.400E-11
+    X_U4.ve      1.455E-11
+    X_U4.vlim    1.314E-07
+    X_U4.vlp    -4.000E-11
+    X_U4.vln    -4.000E-11
+    X_U2.x_lm741.vb   9.118E-13
+    X_U2.x_lm741.vc   1.400E-11
+    X_U2.x_lm741.ve   1.455E-11
+    X_U2.x_lm741.vlim  -1.835E-07
+    X_U2.x_lm741.vlp  -4.000E-11
+    X_U2.x_lm741.vln  -4.000E-11
+    X_U1.x_lm741.vb  -1.735E-12
+    X_U1.x_lm741.vc   1.400E-11
+    X_U1.x_lm741.ve   1.455E-11
+    X_U1.x_lm741.vlim   3.926E-07
+    X_U1.x_lm741.vlp  -4.000E-11
+    X_U1.x_lm741.vln  -4.000E-11
+    X_U3.x_lm741.vb  -1.349E-12
+    X_U3.x_lm741.vc   1.400E-11
+    X_U3.x_lm741.ve   1.455E-11
+    X_U3.x_lm741.vlim   1.540E-07
+    X_U3.x_lm741.vlp  -4.000E-11
+    X_U3.x_lm741.vln  -4.000E-11
+
+    TOTAL POWER DISSIPATION   2.04E-01  WATTS
+
+
+**** 08/28/22 12:24:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\L2 T2(All) EEE,BUET Tanvir\L2 T2 - EEE 208 (Electronic Circuits II Laboratory)\Software\Project Work\Schematics\Final3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U4.ga     X_U4.gcm    X_U2.x_lm741.ga       
+I-SOURCE    -3.622E-09  -3.622E-09  -3.623E-09            
+
+NAME         X_U2.x_lm741.gcm        X_U1.x_lm741.ga       
+I-SOURCE    -3.622E-09              -3.621E-09            
+
+NAME         X_U1.x_lm741.gcm        X_U3.x_lm741.ga       
+I-SOURCE    -3.622E-09              -3.621E-09            
+
+NAME         X_U3.x_lm741.gcm      
+I-SOURCE    -3.622E-09            
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U4.egnd   X_U2.x_lm741.egnd       X_U1.x_lm741.egnd     
+V-SOURCE     0.000E+00   0.000E+00               0.000E+00            
+I-SOURCE    -1.754E-07   1.395E-07              -4.367E-07            
+
+NAME         X_U3.x_lm741.egnd     
+V-SOURCE     0.000E+00            
+I-SOURCE    -1.981E-07            
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U4.fb     X_U2.x_lm741.fb         X_U1.x_lm741.fb       
+I-SOURCE    -1.207E-06   9.769E-06              -1.821E-05            
+
+NAME         X_U3.x_lm741.fb       
+I-SOURCE    -1.435E-05            
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U4.hlim   X_U2.x_lm741.hlim       X_U1.x_lm741.hlim     
+V-SOURCE     1.314E-04  -1.835E-04               3.926E-04            
+I-SOURCE    -2.629E-16   3.671E-16              -7.853E-16            
+
+NAME         X_U3.x_lm741.hlim     
+V-SOURCE     1.540E-04            
+I-SOURCE    -3.081E-16            
+
+
+**** DIODES
+
+
+NAME         X_U4.dc     X_U4.de     X_U4.dlp    X_U4.dln    X_U4.dp   
+MODEL        X_U4.dy     X_U4.dy     X_U4.dx     X_U4.dx     X_U4.dx   
+ID          -1.40E-11   -1.40E-11   -4.00E-11   -4.00E-11   -3.00E-11 
+VD          -1.40E+01   -1.40E+01   -4.00E+01   -4.00E+01   -3.00E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          2.58E-12    2.58E-12    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U2.x_lm741.dc         X_U2.x_lm741.de       
+MODEL        X_U2.x_lm741.dy         X_U2.x_lm741.dy       
+ID          -1.40E-11               -1.40E-11             
+VD          -1.40E+01               -1.40E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.58E-12                2.58E-12             
+
+NAME         X_U2.x_lm741.dlp        X_U2.x_lm741.dln      
+MODEL        X_U2.x_lm741.dx         X_U2.x_lm741.dx       
+ID          -4.00E-11               -4.00E-11             
+VD          -4.00E+01               -4.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_U2.x_lm741.dp         X_U1.x_lm741.dc       
+MODEL        X_U2.x_lm741.dx         X_U1.x_lm741.dy       
+ID          -3.00E-11               -1.40E-11             
+VD          -3.00E+01               -1.40E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                2.58E-12             
+
+NAME         X_U1.x_lm741.de         X_U1.x_lm741.dlp      
+MODEL        X_U1.x_lm741.dy         X_U1.x_lm741.dx       
+ID          -1.40E-11               -4.00E-11             
+VD          -1.40E+01               -4.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.58E-12                0.00E+00             
+
+NAME         X_U1.x_lm741.dln        X_U1.x_lm741.dp       
+MODEL        X_U1.x_lm741.dx         X_U1.x_lm741.dx       
+ID          -4.00E-11               -3.00E-11             
+VD          -4.00E+01               -3.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_U3.x_lm741.dc         X_U3.x_lm741.de       
+MODEL        X_U3.x_lm741.dy         X_U3.x_lm741.dy       
+ID          -1.40E-11               -1.40E-11             
+VD          -1.40E+01               -1.40E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          2.58E-12                2.58E-12             
+
+NAME         X_U3.x_lm741.dlp        X_U3.x_lm741.dln      
+MODEL        X_U3.x_lm741.dx         X_U3.x_lm741.dx       
+ID          -4.00E-11               -4.00E-11             
+VD          -4.00E+01               -4.00E+01             
+REQ          1.00E+12                1.00E+12             
+CAP          0.00E+00                0.00E+00             
+
+NAME         X_U3.x_lm741.dp       
+MODEL        X_U3.x_lm741.dx       
+ID          -3.00E-11             
+VD          -3.00E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U4.q1     X_U4.q2     X_U2.x_lm741.q1       
+MODEL        X_U4.qx     X_U4.qx     X_U2.x_lm741.qx       
+IB           7.98E-08    7.97E-08    7.98E-08             
+IC           7.48E-06    7.48E-06    7.48E-06             
+VBE          5.94E-01    5.94E-01    5.94E-01             
+VBC         -1.50E+01   -1.50E+01   -1.50E+01             
+VCE          1.56E+01    1.56E+01    1.56E+01             
+BETADC       9.38E+01    9.38E+01    9.38E+01             
+GM           2.89E-04    2.89E-04    2.89E-04             
+RPI          3.24E+05    3.24E+05    3.24E+05             
+RX           0.00E+00    0.00E+00    0.00E+00             
+RO           1.00E+12    1.00E+12    1.00E+12             
+CBE          0.00E+00    0.00E+00    0.00E+00             
+CBC          0.00E+00    0.00E+00    0.00E+00             
+CJS          0.00E+00    0.00E+00    0.00E+00             
+BETAAC       9.38E+01    9.38E+01    9.38E+01             
+CBX/CBX2     0.00E+00    0.00E+00    0.00E+00             
+FT/FT2       4.60E+15    4.60E+15    4.60E+15             
+
+
+
+NAME         X_U2.x_lm741.q2         X_U1.x_lm741.q1       
+MODEL        X_U2.x_lm741.qx         X_U1.x_lm741.qx       
+IB           7.97E-08                7.98E-08             
+IC           7.48E-06                7.48E-06             
+VBE          5.94E-01                5.94E-01             
+VBC         -1.50E+01               -1.50E+01             
+VCE          1.56E+01                1.56E+01             
+BETADC       9.38E+01                9.38E+01             
+GM           2.89E-04                2.89E-04             
+RPI          3.24E+05                3.24E+05             
+RX           0.00E+00                0.00E+00             
+RO           1.00E+12                1.00E+12             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC       9.38E+01                9.38E+01             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       4.60E+15                4.60E+15             
+
+
+
+NAME         X_U1.x_lm741.q2         X_U3.x_lm741.q1       
+MODEL        X_U1.x_lm741.qx         X_U3.x_lm741.qx       
+IB           7.97E-08                7.98E-08             
+IC           7.48E-06                7.48E-06             
+VBE          5.94E-01                5.94E-01             
+VBC         -1.50E+01               -1.50E+01             
+VCE          1.56E+01                1.56E+01             
+BETADC       9.38E+01                9.38E+01             
+GM           2.89E-04                2.89E-04             
+RPI          3.24E+05                3.24E+05             
+RX           0.00E+00                0.00E+00             
+RO           1.00E+12                1.00E+12             
+CBE          0.00E+00                0.00E+00             
+CBC          0.00E+00                0.00E+00             
+CJS          0.00E+00                0.00E+00             
+BETAAC       9.38E+01                9.38E+01             
+CBX/CBX2     0.00E+00                0.00E+00             
+FT/FT2       4.60E+15                4.60E+15             
+
+
+
+NAME         X_U3.x_lm741.q2       
+MODEL        X_U3.x_lm741.qx       
+IB           7.97E-08             
+IC           7.48E-06             
+VBE          5.94E-01             
+VBC         -1.50E+01             
+VCE          1.56E+01             
+BETADC       9.38E+01             
+GM           2.89E-04             
+RPI          3.24E+05             
+RX           0.00E+00             
+RO           1.00E+12             
+CBE          0.00E+00             
+CBC          0.00E+00             
+CJS          0.00E+00             
+BETAAC       9.38E+01             
+CBX/CBX2     0.00E+00             
+FT/FT2       4.60E+15             
+
+
+**** 08/28/22 12:24:51 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * D:\L2 T2(All) EEE,BUET Tanvir\L2 T2 - EEE 208 (Electronic Circuits II Laboratory)\Software\Project Work\Schematics\Final3.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  Neg)  -15.0000  (  Pos)   15.0000  (X_U4.6)-11.03E-06 (X_U4.7)     .1057     
+
+(X_U4.8)     .1057 (X_U4.9)    0.0000 ($N_0001)    5.0000                       
+
+($N_0002)    1.5942                   ($N_0003)    0.0000                       
+
+($N_0004)     .0018                   ($N_0005) 19.24E-06                       
+
+($N_0006) 57.06E-12                   ($N_0007) 19.26E-06                       
+
+($N_0008)-942.1E-06                   ($N_0011)-159.4E-12                       
+
+($N_0014) 19.75E-06                   ($N_0015)    -.0986                       
+
+($N_0018) 384.8E-15                   ($N_0019) 18.67E-06                       
+
+($N_0022)    -.1000                   ($N_0023)    0.0000                       
+
+(X_U4.10)    -.6077                   (X_U4.11)   14.9600                       
+
+(X_U4.12)   14.9600                   (X_U4.13)    -.5938                       
+
+(X_U4.14)    -.5938                   (X_U4.53)   14.0000                       
+
+(X_U4.54)  -14.0000                   (X_U4.90)     .1112                       
+
+(X_U4.91)   40.0000                   (X_U4.92)  -40.0000                       
+
+(X_U4.99)    0.0000                   (X_U1.x_lm741.6)-173.5E-09                
+
+(X_U1.x_lm741.7)     .0018            (X_U1.x_lm741.8)     .0018                
+
+(X_U1.x_lm741.9)    0.0000            (X_U2.x_lm741.6) 91.16E-09                
+
+(X_U2.x_lm741.7)-951.3E-06            (X_U2.x_lm741.8)-951.3E-06                
+
+(X_U2.x_lm741.9)    0.0000            (X_U3.x_lm741.6) 9.449E-06                
+
+(X_U3.x_lm741.7)    -.0991            (X_U3.x_lm741.8)    -.0991                
+
+(X_U3.x_lm741.9)    0.0000            (X_U1.x_lm741.10)    -.6077               
+
+(X_U1.x_lm741.11)   14.9600           (X_U1.x_lm741.12)   14.9600               
+
+(X_U1.x_lm741.13)    -.5938           (X_U1.x_lm741.14)    -.5938               
+
+(X_U1.x_lm741.53)   14.0000           (X_U1.x_lm741.54)  -14.0000               
+
+(X_U1.x_lm741.90) 392.6E-06           (X_U1.x_lm741.91)   40.0000               
+
+(X_U1.x_lm741.92)  -40.0000           (X_U1.x_lm741.99)    0.0000               
+
+(X_U2.x_lm741.10)    -.6077           (X_U2.x_lm741.11)   14.9600               
+
+(X_U2.x_lm741.12)   14.9600           (X_U2.x_lm741.13)    -.5938               
+
+(X_U2.x_lm741.14)    -.5938           (X_U2.x_lm741.53)   14.0000               
+
+(X_U2.x_lm741.54)  -14.0000           (X_U2.x_lm741.90)-183.6E-06               
+
+(X_U2.x_lm741.91)   40.0000           (X_U2.x_lm741.92)  -40.0000               
+
+(X_U2.x_lm741.99)    0.0000           (X_U3.x_lm741.10)    -.6077               
+
+(X_U3.x_lm741.11)   14.9600           (X_U3.x_lm741.12)   14.9600               
+
+(X_U3.x_lm741.13)    -.5938           (X_U3.x_lm741.14)    -.5938               
+
+(X_U3.x_lm741.53)   14.0000           (X_U3.x_lm741.54)  -14.0000               
+
+(X_U3.x_lm741.90)    -.0110           (X_U3.x_lm741.91)   40.0000               
+
+(X_U3.x_lm741.92)  -40.0000           (X_U3.x_lm741.99)    0.0000               
+
+(Noise_Plus_Music)     .1001          
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V9        -7.246E-04
+    V_V17       -6.668E-03
+    V_V18       -6.669E-03
+    V_Noise1     1.000E-04
+    V_V21        1.867E-08
+    V_V23        7.246E-04
+    X_U4.vb     -1.103E-10
+    X_U4.vc      1.390E-11
+    X_U4.ve      1.455E-11
+    X_U4.vlim    1.112E-04
+    X_U4.vlp    -3.989E-11
+    X_U4.vln    -4.011E-11
+    X_U2.x_lm741.vb   9.116E-13
+    X_U2.x_lm741.vc   1.400E-11
+    X_U2.x_lm741.ve   1.455E-11
+    X_U2.x_lm741.vlim  -1.836E-07
+    X_U2.x_lm741.vlp  -4.000E-11
+    X_U2.x_lm741.vln  -4.000E-11
+    X_U1.x_lm741.vb  -1.735E-12
+    X_U1.x_lm741.vc   1.400E-11
+    X_U1.x_lm741.ve   1.455E-11
+    X_U1.x_lm741.vlim   3.926E-07
+    X_U1.x_lm741.vlp  -4.000E-11
+    X_U1.x_lm741.vln  -4.000E-11
+    X_U3.x_lm741.vb   9.449E-11
+    X_U3.x_lm741.vc   1.410E-11
+    X_U3.x_lm741.ve   1.455E-11
+    X_U3.x_lm741.vlim  -1.096E-05
+    X_U3.x_lm741.vlp  -4.001E-11
+    X_U3.x_lm741.vln  -3.999E-11
+
+    TOTAL POWER DISSIPATION   2.04E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            1.34
+

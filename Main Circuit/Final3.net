@@ -1,0 +1,38 @@
+* Schematics Netlist *
+
+
+
+R_R2         $N_0002 $N_0001  4.7k  
+C_C1         0 $N_0002  10u  
+R_R1         $N_0003 $N_0002  2.2k  
+V_V9         $N_0001 0 5
+R_R5         $N_0005 $N_0004  22k  
+R_R8         $N_0004 $N_0006  13k  
+C_C3         0 $N_0002  10u  
+X_U2         $N_0006 $N_0007 Pos Neg $N_0008 LM741
+X_U1         $N_0011 $N_0005 Pos Neg $N_0004 LM741
+V_V17         Pos 0 15
+V_V18         0 Neg 15
+C_C2         0 $N_0002  10u  
+X_U3         0 $N_0014 Pos Neg $N_0015 LM741
+R_R3         0 $N_0011  10k  
+R_R7         $N_0007 $N_0008  10k  
+C_C6         0 $N_0018  10u IC=0 
+C_C4         0 $N_0006  1p IC=0 
+C_C8         0 $N_0006  1p IC=0 
+R_R16         $N_0019 Noise_Plus_Music  1k  
+X_U4         0 $N_0019 Pos Neg Noise_Plus_Music uA741
+V_Noise1         $N_0022 0 DC 0 AC 0
++PULSE -0.1 0.1 0 0.025m 0.025m 0.001n 0.05m
+R_R13         $N_0022 $N_0019  1k  
+R_R4         $N_0018 $N_0005  100k  
+R_R6         $N_0004 $N_0007  10k  
+R_R20         Noise_Plus_Music $N_0014  9k  
+R_R10         $N_0008 $N_0014  11k  
+R_R21         $N_0023 $N_0019  1k  
+V_V21         $N_0023 0 DC 0 AC 0
++SIN 0 5 1000 0 0 0
+R_R11         $N_0014 $N_0015  9k  
+C_C7         $N_0003 $N_0011  0.01u IC=0 
+V_V23         $N_0003 0 DC 0 AC 0
++SIN 0 1 1000 0 0 0

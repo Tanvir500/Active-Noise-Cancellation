@@ -1,0 +1,22 @@
+* D:\L2 T2(All) EEE,BUET Tanvir\L2 T2 - EEE 208 (Electronic Circuits II Laboratory)\Software\Project Work\Schematics\Final3.sch
+
+* Schematics Version 9.2
+* Sun Aug 28 12:20:12 2022
+
+
+
+** Analysis setup **
+.tran 1u 5m 0 1u
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "Final3.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
